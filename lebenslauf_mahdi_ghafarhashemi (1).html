@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lebenslauf – Mahdi Ghafarhashemi</title>
+  <meta name="description" content="Lebenslauf von Mahdi Ghafarhashemi – Informatikstudent mit Fokus auf KI/ML, Datenanalyse und Softwareentwicklung." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --bg: #fafbfc;
+      --bg-card: #ffffff;
+      --fg: #1a202c;
+      --fg-muted: #4a5568;
+      --fg-light: #718096;
+      --border: #e2e8f0;
+      --border-light: #f7fafc;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      --radius: 16px;
+      --radius-lg: 24px;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1419;
+        --bg-card: #1a202c;
+        --fg: #f7fafc;
+        --fg-muted: #e2e8f0;
+        --fg-light: #a0aec0;
+        --border: #2d3748;
+        --border-light: #4a5568;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      background: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 2rem 1.5rem 4rem;
+      position: relative;
+    }
+    
+    /* Animated background */
+    .container::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      animation: backgroundShift 20s ease-in-out infinite;
+    }
+    
+    @keyframes backgroundShift {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    
+    header {
+      display: grid; 
+      grid-template-columns: 1.5fr 1fr; 
+      gap: 2rem; 
+      align-items: end;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary-gradient);
+    }
+    
+    h1 { 
+      font-size: clamp(32px, 6vw, 48px); 
+      margin: 0 0 0.5rem; 
+      font-weight: 700;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+    
+    .subtitle { 
+      color: var(--fg-muted); 
+      margin: 0 0 0.25rem; 
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    
+    .contact { 
+      display: grid; 
+      gap: 0.75rem; 
+      justify-items: end; 
+      font-size: 1rem;
+    }
+    
+    .contact a { 
+      color: var(--fg); 
+      text-decoration: none; 
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      background: var(--border-light);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .contact a:hover {
+      background: var(--primary-gradient);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    
+    .grid { 
+      display: grid; 
+      grid-template-columns: 2fr 1fr; 
+      gap: 3rem; 
+    }
+    
+    section { 
+      margin-bottom: 2.5rem; 
+    }
+    
+    h2 { 
+      font-size: 1.25rem; 
+      margin: 0 0 1.5rem; 
+      letter-spacing: 0.05em; 
+      text-transform: uppercase; 
+      color: var(--fg-muted);
+      font-weight: 600;
+      position: relative;
+      padding-left: 1rem;
+    }
+    
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 24px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
+    
+    .card { 
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius); 
+      padding: 1.5rem; 
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent-gradient);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .row { 
+      display: grid; 
+      grid-template-columns: 1fr auto; 
+      gap: 1rem; 
+      align-items: baseline; 
+      margin-bottom: 0.75rem;
+    }
+    
+    .where { 
+      font-weight: 600; 
+      font-size: 1.1rem;
+      color: var(--fg);
+    }
+    
+    .when { 
+      color: var(--fg-light); 
+      font-size: 0.95rem; 
+      white-space: nowrap;
+      background: var(--border-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    
+    .role { 
+      color: var(--fg-muted); 
+      font-size: 1rem; 
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+    
+    ul { 
+      padding-left: 1.5rem; 
+      margin: 1rem 0 0; 
+    }
+    
+    li { 
+      margin: 0.5rem 0; 
+      position: relative;
+    }
+    
+    li::marker {
+      color: var(--primary-gradient);
+    }
+    
+    .chips { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.5rem; 
+      margin-top: 1rem; 
+    }
+    
+    .chip { 
+      background: var(--border-light); 
+      border: 1px solid var(--border); 
+      border-radius: 20px; 
+      padding: 0.4rem 1rem; 
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .chip:hover {
+      background: var(--primary-gradient);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    footer { 
+      margin-top: 4rem; 
+      color: var(--fg-light); 
+      font-size: 0.9rem; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      border-top: 1px solid var(--border); 
+      padding-top: 2rem;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    
+    /* Skills section styling */
+    .skills-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .skill-category {
+      background: var(--border-light);
+      border-radius: 12px;
+      padding: 1rem;
+      border-left: 4px solid transparent;
+      border-image: var(--primary-gradient) 1;
+    }
+    
+    .skill-category strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--fg);
+      font-weight: 600;
+    }
+    
+    /* Language section */
+    .language-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .language-item:last-child {
+      border-bottom: none;
+    }
+    
+    .language-level {
+      background: var(--accent-gradient);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 1024px) { 
+      .grid { 
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+      }
+    }
+    
+    @media (max-width: 768px) { 
+      .container {
+        padding: 1rem;
+      }
+      
+      header { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+        padding: 2rem;
+      } 
+      
+      .contact { 
+        justify-items: start; 
+      }
+      
+      .row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      
+      .when {
+        justify-self: start;
+      }
+    }
+    
+    /* Print styles */
+    @media print {
+      .container::before {
+        display: none;
+      }
+      
+      .card:hover {
+        transform: none;
+        box-shadow: var(--shadow);
+      }
+      
+      .contact a:hover {
+        transform: none;
+        background: var(--border-light);
+        color: var(--fg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Mahdi Ghafarhashemi</h1>
+        <p class="subtitle">Geburtsdatum &middot; 18/11/1999</p>
+        <p class="subtitle">Informatik (B.Sc.) &middot; Universität Bayreuth</p>
+      </div>
+      <div class="contact">
+        <div><strong>Telefon:</strong> <a href="tel:+4915754122331">+49&nbsp;1575&nbsp;4122331</a></div>
+        <div><strong>E-Mail:</strong> <a href="mailto:mghafarhashemi@gmail.com">mghafarhashemi@gmail.com</a></div>
+        <div><strong>Adresse:</strong> Schellingstr. 21/23, 95447 Bayreuth</div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <div>
+        <section id="profil">
+          <h2>👤 Profil</h2>
+          <div class="card">
+            <p>Informatikstudent (B.Sc., Universität Bayreuth) mit Fokus auf <strong>Künstliche Intelligenz</strong>, <strong>Machine Learning</strong> und datengetriebene Softwareentwicklung. Erfahrung im Aufbau von <strong>RAG-Systemen</strong> sowie im Einsatz moderner <strong>Deep-Learning-Frameworks</strong>. Strukturierte Arbeitsweise, schnelle Auffassungsgabe und Teamorientierung.</p>
+          </div>
+        </section>
+
+        <section id="erfahrung">
+          <h2>💼 Berufserfahrung</h2>
+
+          <div class="card">
+            <div class="row">
+              <div>
+                <div class="where">Siemens Healthineers, Forchheim</div>
+                <div class="role">Werkstudent Finance &amp; Controlling Digitalization</div>
+              </div>
+              <div class="when">06/2025 – aktuell</div>
+            </div>
+            <ul>
+              <li>Erstellung und Automatisierung von Finanz-Reports (u. a. <strong>Power BI</strong>, Excel)</li>
+              <li>Unterstützung bei Finanzplanung und Controlling-Prozessen</li>
+              <li>Analyse von Prozess- und Finanzdaten zur Entscheidungsunterstützung</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="row">
+              <div>
+                <div class="where">Universität Bayreuth</div>
+                <div class="role">Hiwi – Data Analysis &amp; Deep Learning in Python</div>
+              </div>
+              <div class="when">04/2025 – 08/2025</div>
+            </div>
+            <ul>
+              <li>Entwicklung von Python-Skripten für Datenanalyse und Machine Learning</li>
+              <li>Einsatz von <strong>NumPy</strong>, <strong>Pandas</strong>, <strong>Keras</strong>, <strong>TensorFlow</strong></li>
+              <li>Unterstützung von Forschungsprojekten im Bereich Deep Learning</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="row">
+              <div>
+                <div class="where">Cineplex Bayreuth</div>
+                <div class="role">Werkstudent</div>
+              </div>
+              <div class="when">08/2023 – 06/2025</div>
+            </div>
+            <ul>
+              <li>Kundenservice und Organisation im Kinobetrieb</li>
+              <li>Einarbeitung neuer Teammitglieder</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="row">
+              <div>
+                <div class="where">Boote Yas Company, Teheran</div>
+                <div class="role">Elektroniker</div>
+              </div>
+              <div class="when">03/2021 – 02/2023</div>
+            </div>
+            <ul>
+              <li>Installation und Wartung elektronischer Systeme</li>
+              <li>Mitarbeit an Projekten im Bereich Elektrotechnik</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="projekte">
+          <h2>🚀 Projekte</h2>
+          <div class="card">
+            <div class="row">
+              <div class="where">Forschungsarbeit: RAG in Business Process Management</div>
+              <div class="when">2024–2025</div>
+            </div>
+            <ul>
+              <li>Aufbau einer <strong>RAG-Pipeline</strong> mit LangChain, Flowise und Vektor-Datenbanken (Pinecone, Qdrant)</li>
+              <li>Entwicklung von <strong>BPMN</strong>-spezifischen Chunking-Strategien</li>
+              <li>Verbesserung der Retrieval-Qualität und Modellgenauigkeit</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="row">
+              <div class="where">Campus Coffee Finder (Java Spring Boot)</div>
+              <div class="when">2024</div>
+            </div>
+            <ul>
+              <li>Web-App zur Lokalisierung von Cafés am Campus</li>
+              <li>Einsatz von <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Maven</strong>, <strong>REST-APIs</strong>, <strong>GitHub Actions</strong> (CI/CD)</li>
+              <li>Zusammenarbeit in einem studentischen Entwicklungsteam</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <section id="bildung">
+          <h2>🎓 Bildung</h2>
+          <div class="card">
+            <div class="row">
+              <div class="where">Universität Bayreuth</div>
+              <div class="when">04/2023 – Aktuell</div>
+            </div>
+            <div class="role">Informatik (B.Sc.)</div>
+          </div>
+          <div class="card">
+            <div class="row">
+              <div class="where">Shahid Beheshti Universität, Teheran (Iran)</div>
+              <div class="when">09/2018 – 02/2023</div>
+            </div>
+            <div class="role">Elektrotechnik (B.Sc.)</div>
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2>⚡ Technische Fähigkeiten</h2>
+          <div class="card">
+            <div class="skills-grid">
+              <div class="skill-category">
+                <strong>Programmiersprachen</strong>
+                <div>Python, Java, C, C++, SQL</div>
+              </div>
+              <div class="skill-category">
+                <strong>Data Science &amp; ML</strong>
+                <div>NumPy, Pandas, Keras, TensorFlow, Power BI</div>
+              </div>
+              <div class="skill-category">
+                <strong>Webentwicklung</strong>
+                <div>HTML, CSS, Flask</div>
+              </div>
+              <div class="skill-category">
+                <strong>Tools &amp; Methoden</strong>
+                <div>Git, Docker, Maven, REST-APIs</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sprachen">
+          <h2>🌍 Sprachen</h2>
+          <div class="card">
+            <div class="language-item">
+              <span>Persisch</span>
+              <span class="language-level">Muttersprache</span>
+            </div>
+            <div class="language-item">
+              <span>Deutsch</span>
+              <span class="language-level">C1</span>
+            </div>
+            <div class="language-item">
+              <span>Englisch</span>
+              <span class="language-level">TOEFL iBT 110/120 (C1/C2)</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer>
+      <div>Zuletzt aktualisiert: 31.08.2025</div>
+      <div>&copy; 2025 Mahdi Ghafarhashemi</div>
+    </footer>
+  </div>
+</body>
+</html>
